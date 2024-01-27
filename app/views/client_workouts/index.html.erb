@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Client workouts</h1>
+
+<div id="client_workouts">
+  <% @client_workouts.each do |client_workout| %>
+    <%= render client_workout %>
+    <p>
+      <%= link_to "Show this client workout", client_workout %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New client workout", new_client_workout_path %>
