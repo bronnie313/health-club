@@ -9,7 +9,8 @@ class ClientWorkoutsController < ApplicationController
 
   def search
     @search_string = params[:search_string]
-    @client_workouts = ClientWorkout.where('client_workouts.client_name LIKE ?', "%#{@search_string}%")
+    @client_workouts = ClientWorkout.where('client_workouts.client_name LIKE :search OR client_workouts.trainer LIKE :search',
+                                           search: "%#{@search_string}%")
     render 'index'
   end
 
