@@ -9,8 +9,8 @@ class ClientWorkoutsController < ApplicationController
 
   def search
     @search_string = params[:search_string]
-    @client_workouts = ClientWorkout.where("client_workouts.client_name LIKE ?", "%#{@search_string}%")
-    render "index"
+    @client_workouts = ClientWorkout.where('client_workouts.client_name LIKE ?', "%#{@search_string}%")
+    render 'index'
   end
 
   # GET /client_workouts/1 or /client_workouts/1.json
@@ -78,4 +78,3 @@ class ClientWorkoutsController < ApplicationController
     params.require(:client_workout).permit(:client_name, :trainer, :duration_mins, :date_of_workout, :paid_amount)
   end
 end
-
