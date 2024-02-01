@@ -1,0 +1,2 @@
+class ClientWorkout < ApplicationRecord
+end
