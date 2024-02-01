@@ -18,8 +18,11 @@ class ClientWorkoutsControllerTest < ActionDispatch::IntegrationTest
   test 'should create client_workout' do
     assert_difference('ClientWorkout.count') do
       post client_workouts_url,
-           params: { client_workout: { client_name: @client_workout.client_name, date_of_workout: @client_workout.date_of_workout,
-                                       duration_mins: @client_workout.duration_mins, paid_amount: @client_workout.paid_amount, trainer: @client_workout.trainer } }
+           params: { client_workout: { client_name: @client_workout.client_name,
+                                       date_of_workout: @client_workout.date_of_workout,
+                                       duration_mins: @client_workout.duration_mins,
+                                       paid_amount: @client_workout.paid_amount,
+                                       trainer: @client_workout.trainer } }
     end
 
     assert_redirected_to client_workout_url(ClientWorkout.last)
@@ -37,8 +40,11 @@ class ClientWorkoutsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update client_workout' do
     patch client_workout_url(@client_workout),
-          params: { client_workout: { client_name: @client_workout.client_name, date_of_workout: @client_workout.date_of_workout,
-                                      duration_mins: @client_workout.duration_mins, paid_amount: @client_workout.paid_amount, trainer: @client_workout.trainer } }
+          params: { client_workout: { client_name: @client_workout.client_name,
+                                      date_of_workout: @client_workout.date_of_workout,
+                                      duration_mins: @client_workout.duration_mins,
+                                      paid_amount: @client_workout.paid_amount,
+                                      trainer: @client_workout.trainer } }
     assert_redirected_to client_workout_url(@client_workout)
   end
 
